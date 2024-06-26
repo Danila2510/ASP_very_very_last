@@ -1,0 +1,9 @@
+{
+  "smtp": {
+    "host": "smtp.gmail.com",
+    "email": "mtedia200323@gmail.com",
+    "port": 587,
+    "ssl": true,
+    "password": "ziskpaolmenuinvr"
+  }
+}
