@@ -44,12 +44,17 @@ body {
 }
 
 .sub-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background: url(/img/header.jpg) no-repeat;
     background-size: cover;
     width: 100%;
-    height: 25vh;
+    height: 60vh;
     min-height: 150px;
-}
+    align-items: center;
+    
+}   
 
 .card a{
     text-decoration: none;
@@ -57,15 +62,16 @@ body {
 }
 
 .calendar {
-    border: 1px solid gray;
     display: flex;
     flex-wrap: wrap;
 }
 
 .calendar-item {
-    border: 1px solid gray;
     text-align: center;
     width: 14.286%;
+    height: 30px;
+    transition: 0.3s;
+
 }
 
 .day-header {
@@ -76,6 +82,11 @@ body {
 .item-free{
     color: greenyellow;
     cursor: pointer;
+
+}.item-free:hover{
+    color: white;
+    cursor: pointer;
+    background-color: lightgreen;
 }
 .item-past{
     cursor: default;
@@ -84,4 +95,22 @@ body {
 .item-reserved{
     cursor: pointer;
     color: hotpink;
+
+}.item-reserved:hover{
+    cursor: pointer;
+    color: white;
+    background-color: hotpink;
+
+
 }
+select {
+    border: none; /* Убираем границу */
+    outline: none; /* Убираем outline при фокусе */
+    background-color: transparent; /* Делаем фон прозрачным */
+    padding: 10px; /* Добавляем отступы */
+    font-size: 16px; /* Устанавливаем размер шрифта */
+    border-radius: 4px; /* Закругляем углы (по желанию) */
+    appearance: none; /* Убираем стандартный стиль браузера */
+    -webkit-appearance: none; /* Убираем стандартный стиль для WebKit */
+    -moz-appearance: none; /* Убираем стандартный стиль для Firefox */
+}   

@@ -19,30 +19,36 @@
 	<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 	<link rel="stylesheet" href="~/ASP.styles.css" asp-append-version="true" />
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+	<link rel="stylesheet" type="text/css"href="~/css/content/content.css">
 </head>
 <body>
 	<header>
 		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
 			<div class="container-fluid">
-				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ASP</a>
+				<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hotel website</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
 						aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-					<ul class="navbar-nav flex-grow-1">
+					<ul class="navbar-nav flex-grow-1 justify-content-center">
 						<li class="nav-item">
-							<a class="nav-link text-dark" asp-area="" title="Домашняя страница"
-							   asp-controller="Home" asp-action="Index"><i class="bi bi-house-door"></i></a>
+							<a class="nav-link text-dark" asp-area="" title="Home"
+							   asp-controller="Content" asp-action="Index">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" title="Політика безпеки"
-							   asp-controller="Home" asp-action="Privacy"><i class="bi bi-shield-check"></i></a>
+							   asp-controller="Home" asp-action="Privacy">Privacy</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link text-dark" asp-area="" title="Адміністрування контенту"
-							   asp-controller="Home" asp-action="Admin"><i class="bi bi-pencil-square"></i></a>
+							   asp-controller="Home" asp-action="Admin">Admin panel</a>
 						</li>
+						<li class="nav-item">
+							<a class="nav-link text-dark" asp-area="" title="Отели"
+							   asp-controller="Content" asp-action="Category" asp-route-id="Hotel">Hotels</a>
+						</li>
+					
 					</ul>
 					@if (isAuthenticated)
 					{
@@ -71,10 +77,13 @@
 		</nav>
 		<div class="sub-header">
 			<h2>
-				Make yourself at home
-				in paradise
+				Rooms and Suites
 			</h2>
-			<h4>Choose from cabins, houses and more</h4>
+			<h4>
+				The elegant luxury bedrooms in this gallery showcase custom interior
+				designs & decorating ideas. View pictures and find your
+				perfect luxury bedroom design.
+			</h4>
 		</div>
 	</header>
 	<div class="container">

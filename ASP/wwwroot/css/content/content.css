@@ -1,0 +1,55 @@
+﻿body {
+
+}
+
+.sub-header h2{
+    text-align: center;
+    color:floralwhite;
+    padding-bottom: 30px;
+   
+}
+.sub-header h4 {
+    text-align: center;
+    color: floralwhite;
+    max-width: 600px;
+}
+.container {
+    margin-top: 50px;
+}
+.card img {
+    max-height: 200px;
+    min-height: 200px;
+    object-fit: cover;
+}
+.card {
+    box-shadow: 2px 10px 12px rgba(0,0,0,0.2);
+}
+.card-title {
+    color: #7C6A46;
+}
+.card-text {
+    color: #7C6A46;
+}
+.content-h1 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #7C6A46;
+}
+.dollar {
+    color: #7C6A46;
+}
+.doubleroom {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #7C6A46;
+}
+.seymourhotel {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #7C6A46;
+}
+.opisanie {
+    margin-top: 50px;
+    color: #7C6A46;
+    font-weight: 600;
+}

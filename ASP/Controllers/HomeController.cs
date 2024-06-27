@@ -218,7 +218,18 @@ namespace ASP.Controllers
 			{
 				TabHeader = "Privacy",
 				PageTitle = "Privacy Policy",
-				PageText = "Use this page to detail your site's privacy policy."
+				PageText = "1. Introduction\n\nTech Solutions Inc. (\"we,\" \"our,\" or \"us\") is committed to protecting your privacy. " +
+				"This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website www.techsolutionsinc.com, " +
+				"use our services, or otherwise interact with us. Please read this policy carefully to understand our views and practices regarding your personal data " +
+				"and how we will treat it.\n\n2. Information We Collect\n\nWe may collect and process the following types of information:\n\n2.1 Personal Information:\n\nName\nEmail address\nPhone number\nAddress\nPayment information\n2.2 Non-Personal " +
+				"Information:\n\nBrowser type\nOperating system\nIP address\nPages visited on our website\nTime and date of visit\n3. How We Use Your Information\n\nWe use the information we collect for the " +
+				"following purposes:\n\nTo provide, operate, and maintain our services\nTo improve, personalize, and expand our services\nTo communicate with you, including customer service and support\nTo process transactions and send related " +
+				"information\nTo send promotional materials and updates\nTo detect and prevent fraud\nTo comply with legal obligations\n4. How We Share Your Information\n\nWe do not sell, trade, or otherwise transfer your personal " +
+				"information to outside parties except in the following circumstances:\n\nWith your consent\nWith service providers who perform services on our behalf\nTo comply with legal obligations\nTo protect and defend our rights and property" +
+				"\nIn connection with a business transfer (e.g., merger, acquisition)\n5. Data Security\n\nWe implement a variety of security measures to maintain the safety of your personal information." +
+				" However, no method of transmission over the Internet or electronic storage is 100% secure. " +
+				"Therefore, while we strive to use commercially acceptable means to protect your personal information, we cannot guarantee its absolute security.."
+
 			};
 			return View(privacyPage);
 		}

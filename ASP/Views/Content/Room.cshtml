@@ -1,23 +1,24 @@
 ﻿@using System.Security.Claims
 @model ASP.Models.Content.Room.ContentRoomPageModel
 @{
+    Layout = "_ContentLayout";
     bool isAuthenticated = Context.User.Identity?.IsAuthenticated ?? false;
     Guid? userId = isAuthenticated
     ? Guid.Parse(Context.User.Claims.First(claim => claim.Type == ClaimTypes.Sid).Value)
     : null;
 }
 
-@Model.Year
+
 
 <div class="row">
     <div class="col col-8">
-        <h1>Кiмната: @Model.Room.Name</h1>
+        <h1 class="doubleroom">Seymour Hotel: @Model.Room.Name</h1>
         <img src="~/img/content/@(Model.Room.PhotoUrl ?? "no-image.jpg")" class="card-img-top" alt="...">
-        <p>@Model.Room.Description</p>
+        <p class="opisanie">@Model.Room.Description</p>
     </div>
     <div class="col col-4">
         <form>
-            Бронювання кiмнати на <select name="month">
+            <select style="border:none" name="month">
                 @for (int i = 1; i <= 12; i++)
                 {
                     if (i == Model.Month)
@@ -29,7 +30,7 @@
                         <option value="@i">@(i.ToString("D2"))</option>
                     }
                 }
-            </select> мiсяць <select name="year">
+            </select> / <select name="year">
                 @for (int i = DateTime.Today.Year; i <= DateTime.Today.Year + 1; ++i)
                 {
                     if (i == Model.Year)
@@ -41,7 +42,7 @@
                         <option>@i</option>
                     }
                 }
-            </select> року <button>Оновити</button>
+            </select>  <button class="btn btn-info"> search </button>
         </form>
         <br />
         @{
@@ -55,10 +56,13 @@
             @foreach (var day in daysOfWeek)
             {
                 <div class="calendar-item day-header">@day</div>
+            }@foreach (var day in daysOfWeek)
+            {
+                <div class="calendar-item "style="max-height:1px;background-color:black;min-height:1px;"></div>
             }
             @for (int i = 0; i < firstDayOffset; i++)
             {
-                <div class="calendar-item"></div>
+                <div class="calendar-item align-items-center"></div>
             }
 
             @for (int i = 1; i <= DateTime.DaysInMonth(Model.Year, Model.Month); ++i)
