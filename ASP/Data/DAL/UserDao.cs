@@ -194,9 +194,22 @@ namespace ASP.Data.DAL
             }
             return password;
         }
+        public bool AddPhone(String userId, String num)
+        {
+            User? user;
+            lock (_dblocker)
+            {
+                user = _dataContext.Users.FirstOrDefault(x => x.Id == Guid.Parse(userId));
+            }
+            if (user == null) return false;
+            num = num.Trim();
+            if (num.Length != 10) return false;
+            user.Number = num;
+            lock (_dblocker)
+            {
+                _dataContext.SaveChanges();
+            }
+            return true;
+        }
     }
 }
-
-/* DAL - Data Access Layer - сукупність ycіх DAO
- * DAO - Data Access Object - набір методів для роботи з сутністю
- */

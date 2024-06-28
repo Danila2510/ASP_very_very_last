@@ -121,6 +121,10 @@ namespace ASP.Controllers
             {
                 return DoRestorePassword();
             }
+            if (Request.Method == "ADD_PHONE")
+            {
+                return AddPhoneUser();
+            }
             Response.StatusCode = StatusCodes.Status405MethodNotAllowed;
             return "Method not Allowed";
         }
@@ -167,6 +171,28 @@ namespace ASP.Controllers
                 _logger.LogInformation(ex.Message);
             }
             return "RESTORE works with email: " + email;
+        }
+
+        private String AddPhoneUser()
+        {
+            String? userId = Request.Query["userid"].FirstOrDefault();
+            String? phone = Request.Query["phone"].FirstOrDefault();
+            bool succes;
+            try
+            {
+                succes = _dataAccessor.UserDao.AddPhone(userId, phone);
+            }
+            catch
+            {
+                Response.StatusCode = StatusCodes.Status400BadRequest;
+                return "Empty or invalid inputs";
+            }
+            if (!succes)
+            {
+                Response.StatusCode = StatusCodes.Status406NotAcceptable;
+                return "Empty or invalid inputs";
+            }
+            return "ADD_PHONE works with email: " + userId;
         }
 
         [HttpGet("token")]

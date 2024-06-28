@@ -8,8 +8,7 @@
     : null;
 }
 
-
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <div class="row">
     <div class="col col-8">
         <h1 class="doubleroom">Seymour Hotel: @Model.Room.Name</h1>
@@ -103,6 +102,19 @@
         @if (freedays == 0)
         {
             <b>У данному мiсяцi немаэ вiльних днiв</b>
+        }
+        @if (isAuthenticated)
+        {
+            <form id="number-form" enctype="multipart/form-data">
+                <div class="card" style="margin-left:20px; margin-top:20px;">
+                    <p class="sms">Please enter your phone number to clarify your reservation</p>
+                    <div class="input-group mb-3">
+                        <input id="user-phone" name="user-phone" type="text" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="button-phone">
+                        <input type="hidden" name="user-id" value="@(userId)">
+                        <button type="submit" class="btn btn-outline-secondary smsbutton">Done</button>
+                    </div>
+                </div>
+            </form>
         }
     </div>
 </div>

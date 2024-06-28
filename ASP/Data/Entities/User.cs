@@ -15,6 +15,8 @@ namespace ASP.Data.Entities
         public DateTime? DeleteDt { get; set; }
 		public String? Role { get; set; }
 
+		public String? Number { get; set; }
+
         [JsonIgnore] public List<Reservation> Reservations { get; set; }
     }
 }

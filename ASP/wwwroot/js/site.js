@@ -107,7 +107,23 @@
             });
         }
     }
-    // на інші форми ми не вплюваємо
+    if (form.id == 'number-form') {
+        e.preventDefault();
+        let formData = new FormData(form);
+        userId = formData.get("user-id");
+        phone = formData.get("user-phone");
+        fetch(`/api/auth?userid=${userId}&phone=${phone}`, {
+            method: 'ADD_PHONE',
+            body: formData
+        }).then(r => {
+            if (r.status < 300) {
+                showSuccessMessage();
+            }
+            else {
+                showFailMessage();
+            }
+        });
+    }
 });
 document.addEventListener('DOMContentLoaded', function () {
     const authButton = document.getElementById("auth-button");
@@ -496,10 +512,25 @@ function serveReserveButtons() {
         });
     }
 }
+function showSuccessMessage() {
+    Swal.fire({
+        title: 'Success',
+        text: 'The number was added successfully.',
+        confirmButtonText: 'Done'
+    });
+}
 
-/* CRUD
-  Delete: видалення буває "м'яким" та "жорстким"
-  жорстке Chard) - реальне видалення як правило без можливості відновлення
-  м'яке - помітка даних як "видалені" 
+function showFailMessage() {
+    Swal.fire({
+        title: 'False',
+        text: 'Failed to send number. Make sure the spelling is correct',
+        confirmButtonText: 'Done'
+    });
+}
 
-*/
+function updateLink() {
+    var inputValue = document.getElementById("inputValue").value;
+    var link = document.getElementById("dynamicLink");
+    var baseUrl = "Content/SearchLocation/"+inputValue;
+    link.href = baseUrl.replace('ID', encodeURIComponent(inputValue));
+}

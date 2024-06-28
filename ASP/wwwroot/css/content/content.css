@@ -53,3 +53,17 @@
     color: #7C6A46;
     font-weight: 600;
 }
+.sms {
+    margin: 10px;
+    color: #7C6A46;
+    font-weight: 600;
+}
+.smsbutton {
+    background-color: deepskyblue;
+}
+.searchheder {
+    margin-bottom: 50px;
+}
+.buttonheder {
+    background-color: deepskyblue;
+}

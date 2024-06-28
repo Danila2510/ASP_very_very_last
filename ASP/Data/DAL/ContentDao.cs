@@ -354,5 +354,10 @@ namespace ASP.Data.DAL
                 _context.SaveChanges();
             }
         }
+        public List<Location> GetLocationsByName(String Name)
+        {
+            var loc = _context.Locations.Where(l => l.Name.Contains(Name) && l.DeleteDt == null).ToList();
+            return loc;
+        }
     }
 }

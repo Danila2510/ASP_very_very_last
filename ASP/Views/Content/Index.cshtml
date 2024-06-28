@@ -9,6 +9,12 @@
 	: "";
 	ViewData["role"] = role;
 }
+<div class="input-group" style="margin-left:10px; margin-right:10px">
+    <input id="inputValue" type="text" class="form-control searchheder" placeholder="Find position" aria-label="Enter Location" aria-describedby="basic-addon2" oninput="updateLink()">
+    <div class="input-group-append">
+        <a id="dynamicLink" class="btn btn-outline-secondary buttonheder" type="button" asp-area="" asp-controller="Content" asp-action="SearchLocation" asp-route-id="">Done</a>
+    </div>
+</div>
 <div class="row row-cols-1 row-cols-md-4 g-4">
 	@foreach (var category in Model.Categories)
 	{

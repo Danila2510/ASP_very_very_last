@@ -1,0 +1,15 @@
+﻿@using System.Security.Claims
+@model ASP.Models.Content.Location.ContentAllLocationPageModel
+@{
+    Layout = "_ContentLayout";
+    bool isAuthenticated = Context.User.Identity?.IsAuthenticated ?? false;
+    Guid? userId = isAuthenticated
+    ? Guid.Parse(Context.User.Claims.First(claim => claim.Type == ClaimTypes.Sid).Value)
+    : null;
+}
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    @foreach (var location in Model.Location)
+    {
+        @Html.DisplayFor(m => location, "LocationTemplate")
+    }
+</div>
