@@ -159,6 +159,7 @@ namespace ASP.Data.DAL
         }
         public Location? GetLocationById(Guid? id)
         {
+
             Location? loc;
             lock (_dblocker)
             {
@@ -166,8 +167,12 @@ namespace ASP.Data.DAL
             }
             return loc;
         }
-
-        public void UpdateLocation(Location location)
+		public Room? GetRoomById(String id)
+		{
+			Room? room = _context.Rooms.FirstOrDefault(r => r.Id == Guid.Parse(id));
+			return room == null ? null : room;
+		}
+		public void UpdateLocation(Location location)
         {
             Location? loc;
             lock (_dblocker)
